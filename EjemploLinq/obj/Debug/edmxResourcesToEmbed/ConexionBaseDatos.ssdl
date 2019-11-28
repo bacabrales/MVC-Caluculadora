@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ConexionTabla.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="empleado">
+    <Key>
+      <PropertyRef Name="idEmpl" />
+    </Key>
+    <Property Name="idEmpl" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nomEmpl" Type="varchar" MaxLength="68" Nullable="false" />
+    <Property Name="apeEmpl" Type="varchar" MaxLength="68" Nullable="false" />
+    <Property Name="edadEmpl" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="ConexionTablaStoreContainer">
+    <EntitySet Name="empleado" EntityType="Self.empleado" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ConexionTablaStoreContainer" CdmEntityContainer="ConexionBase">
+    <EntitySetMapping Name="empleado">
+      <EntityTypeMapping TypeName="ConexionTabla.empleado">
+        <MappingFragment StoreEntitySet="empleado">
+          <ScalarProperty Name="idEmpl" ColumnName="idEmpl" />
+          <ScalarProperty Name="nomEmpl" ColumnName="nomEmpl" />
+          <ScalarProperty Name="apeEmpl" ColumnName="apeEmpl" />
+          <ScalarProperty Name="edadEmpl" ColumnName="edadEmpl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

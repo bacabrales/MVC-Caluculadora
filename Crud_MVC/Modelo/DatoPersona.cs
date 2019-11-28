@@ -25,5 +25,37 @@ namespace Crud_MVC.Modelo
                         Edad = Convert.ToInt32(row["edadEmpl"])
                     }).ToList();
         }
+
+        public void insertar(Persona persona)
+        {
+            SqlConnection conex = Singleton.obtenerConexion();
+            SqlCommand comand = new SqlCommand("pa_Guardar",conex);
+            comand.CommandType = CommandType.StoredProcedure;
+            comand.Parameters.AddWithValue("@nombre",persona.Nombre);
+            comand.Parameters.AddWithValue("@apellido", persona.Apellido);
+            comand.Parameters.AddWithValue("@edad", persona.Edad);
+            comand.ExecuteNonQuery();
+        }
+
+        public void modificar(Persona persona, int id)
+        {
+            SqlConnection conex = Singleton.obtenerConexion();
+            SqlCommand comand = new SqlCommand("pa_Modificar",conex);
+            comand.CommandType = CommandType.StoredProcedure;
+            comand.Parameters.AddWithValue("@id",id);
+            comand.Parameters.AddWithValue("@nombre",persona.Nombre);
+            comand.Parameters.AddWithValue("@apellido", persona.Apellido);
+            comand.Parameters.AddWithValue("@edad", persona.Edad);
+            comand.ExecuteNonQuery();
+        }
+
+        public void delete(int id)
+        {
+            SqlConnection conex = Singleton.obtenerConexion();
+            SqlCommand comand = new SqlCommand("pa_delete", conex);
+            comand.CommandType = CommandType.StoredProcedure;
+            comand.Parameters.AddWithValue("@id", id);
+            comand.ExecuteNonQuery();
+        }
     }
 }
